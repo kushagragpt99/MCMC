@@ -76,6 +76,8 @@ MH_output <- MH(X, y, h, n, init)
 PG_output <- polya_gamma(X, y, init, n)
 
 # Plotting output for comparision of MH and Gibbs with augmentation 
+
+# MH shows exteremly high auto-correlation. The Gibbs sampler with data augmentation shows immensely improved performance
 par(mfrow = c(2,4))
 acf(MH_output[,1],main="MH Comp 1")
 acf(MH_output[,2],main="MH Comp 2")

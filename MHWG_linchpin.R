@@ -90,7 +90,9 @@ linchpin_output <- linchpin(T, a0, a1, b0, b1, init, n, h)
 h = 0.009                                                     # h value for the proposal for reasonable acceptance for MHWG
 MHWG_output <- MHWG(T, a0, a1, b0, b1, init, n, h)
 
-# Plotting the outputs
+
+#From the plots it is evident that the linchpin variable sampler is far better. The trace plots show better
+#movement of the Markov chain and the autocorrelation function plot indicate lower correlations.
 par(mfrow = c(2,2))
 plot(density(linchpin_output[,1]), xlim=c(0,0.02))
 plot(density(linchpin_output[,2]))

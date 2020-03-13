@@ -51,6 +51,9 @@ for(i in 1:3) {
 #print(acceptance_prob/n)
 
 #Plotting the output
+
+#When 100 parameters are being updated together, it just requires one of the 100 proposed values to be bad for the full vector
+#to be rejected, therefore we need really small updates for them to be accepted
 plot.ts(output[,1])
 plot.ts(output[,2])
 plot.ts(output[,3])

@@ -63,6 +63,9 @@ plot(density(t), main = "True marginal for X1")
 plot(density(rnorm(n, mean = -2)), main = "True marginal for X2")
 
 # Comparsision of the two methods for different values of correlation
+
+#For the first two cases it looks like Gibbs does a better job at sampling from the target. However for rho = .99 
+#the correlation is much too large for Gibbs to work well. Here MH is better.
 for(i in 1:3) {
     par(mfrow=c(2,1))
     chain.mh = MH(n, init, h_vec[i], rho_vec[i])
